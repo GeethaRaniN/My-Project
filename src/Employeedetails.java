@@ -22,9 +22,21 @@ try {
 	
 }
 catch (SQLException E) {
-	E.printStackTrace();
-	
+	E.printStackTrace();}
+return result;
+
 }
+
+	public int deletedata(Employee Em) {
+		int result =0;
+		String query= "delete from Employee where ID="+Em.getID()+"";
+	try {
+		State= connect.createStatement();
+	result= State.executeUpdate(query);
+	
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
 return result;
 }
 public static void main(String[] args) {
